@@ -97,5 +97,7 @@ Input how long does the process take.
 =================================================================
 
 First, please input some informations follow the instructions.
+
 After that, simulator simulates CPU time scheduling.
+
 Finally, this program displays the result on the console.
