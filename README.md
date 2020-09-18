@@ -105,16 +105,12 @@ After that, simulator simulates CPU time scheduling.
 Finally, this program displays the result on the console.
 
 # Process to execute
+```
 $ git clone https://github.com/Rashoru-Infinity/OperatingSystem_TimeScheduling.git
-
 $ cd OperatingSystem_TimeScheduling
-
 $ sudo apt install ant
-
 $ cd src
-
 $ ant
-
 $ cd bin
-
 $ java al19136.Main
+```
