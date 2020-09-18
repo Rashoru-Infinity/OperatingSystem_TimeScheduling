@@ -5,6 +5,9 @@ import al19136.process.ProcessData;
 
 public class RoundRobin extends Process {
 	private int quantum;
+	public RoundRobin(int quantum) {
+		this.quantum = quantum;
+	}
 	@Override
 	public void calc() {
 		sortArrival();
@@ -37,9 +40,5 @@ public class RoundRobin extends Process {
 			}
 		}
 		super.execute(quantum);
-	}
-	
-	public void setQuantum(int quantum) {
-		this.quantum = quantum;
 	}
 }

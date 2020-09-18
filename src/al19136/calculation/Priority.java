@@ -17,9 +17,9 @@ public class Priority extends Process {
 				if(!readyList.get(0).isExecuting()) {
 					sortPriority(readyList);
 				}
-				execute(readyList.get(0).getTime());
+				execute(readyList.get(0).getRemaining());
 			}else {
-				execute(ProcessData.DO_NOTHING);
+				execute(DO_NOTHING);
 			}
 		}
 	}

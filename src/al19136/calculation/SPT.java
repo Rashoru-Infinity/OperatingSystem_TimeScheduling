@@ -3,7 +3,6 @@ package al19136.calculation;
 import java.util.Collections;
 
 import al19136.process.Process;
-import al19136.process.ProcessData;
 import al19136.process.TimeComparator;
 
 public class SPT extends Process {
@@ -16,9 +15,9 @@ public class SPT extends Process {
 				if(!readyList.get(0).isExecuting()) {
 					sortReadyList();
 				}
-				execute(readyList.get(0).getTime());
+				execute(readyList.get(0).getRemaining());
 			}else {
-				execute(ProcessData.DO_NOTHING);
+				execute(DO_NOTHING);
 			}
 		}
 	}

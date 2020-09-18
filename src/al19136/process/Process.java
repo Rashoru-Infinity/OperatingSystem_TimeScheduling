@@ -3,13 +3,13 @@ package al19136.process;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public abstract class Process {
+public abstract class Process implements SpecialNumbers {
 	protected ArrayList<ProcessData> psList = new ArrayList<>();
 	protected ArrayList<ProcessData> readyList = new ArrayList<>();
 	public ArrayList<ProcessData> timeTable = new ArrayList<>();
 	
 	@SuppressWarnings("unchecked")
-	public void setpsList(ArrayList<ProcessData> psList) {
+	public void setPSList(ArrayList<ProcessData> psList) {
 		this.psList = (ArrayList<ProcessData>)psList.clone();
 	}
 	protected void addReadyList(int time) {
@@ -26,12 +26,12 @@ public abstract class Process {
 	protected void execute(int quantum) {
 		if(readyList.size()==0) {
 			ProcessData psdata = new ProcessData();
-			psdata.setPid(ProcessData.DO_NOTHING);
+			psdata.setPid(DO_NOTHING);
 			timeTable.add(psdata);
 		}else {
 			readyList.get(0).execute(quantum);
 			timeTable.add(new ProcessData(readyList.get(0)));
-			if(readyList.get(0).getTime()==ProcessData.FINISHED) {
+			if(readyList.get(0).getRemaining() == FINISHED) {
 				readyList.remove(0);
 			}
 		}
@@ -42,7 +42,7 @@ public abstract class Process {
 	public String getTimeTable(int time) {
 		StringBuilder sb = new StringBuilder();
 		if(time<timeTable.size()) {
-			if(timeTable.get(time).getPid()!=ProcessData.DO_NOTHING) {
+			if(timeTable.get(time).getPid() != DO_NOTHING) {
 				sb.append("Process");
 				sb.append(timeTable.get(time).getPid());
 			}else {
@@ -52,6 +52,14 @@ public abstract class Process {
 			sb.append("DO_NOTHING");
 		}
 		return sb.toString();
+	}
+	public Object getTurnAroundTime(int pid) {
+		for (int time = 0;time < timeTable.size();time++) {
+			if (timeTable.get(time).getPid() == pid && timeTable.get(time).getRemaining() == 0) {
+				return time - timeTable.get(time).getArrivalTime() + 1;
+			}
+		}
+		return null;
 	}
 	public abstract void calc();
 }

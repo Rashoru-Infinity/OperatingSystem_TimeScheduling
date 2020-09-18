@@ -4,7 +4,6 @@ import java.util.Collections;
 
 import al19136.process.DeadlineComparator;
 import al19136.process.Process;
-import al19136.process.ProcessData;
 
 public class Deadline extends Process {
 	@Override
@@ -14,9 +13,9 @@ public class Deadline extends Process {
 			addReadyList(i);
 			if(readyList.size()>0) {
 				sortDeadline();
-				execute(readyList.get(0).getTime());
+				execute(readyList.get(0).getRemaining());
 			}else {
-				execute(ProcessData.DO_NOTHING);
+				execute(DO_NOTHING);
 			}
 		}
 	}

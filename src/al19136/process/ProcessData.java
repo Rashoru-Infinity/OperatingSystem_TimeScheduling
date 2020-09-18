@@ -1,6 +1,6 @@
 package al19136.process;
 
-public class ProcessData {
+public class ProcessData implements SpecialNumbers {
 	private int time;
 	private int priority;
 	private int pid;
@@ -9,11 +9,9 @@ public class ProcessData {
 	private boolean executing = false;
 	private int quantum;
 	private boolean changeable = false;
-	public static final int FINISHED = 0;
-	public static final int DO_NOTHING = -1;
 	
 	public ProcessData(ProcessData psdata) {
-		time = psdata.getTime();
+		time = psdata.getRemaining();
 		priority = psdata.getPriority();
 		pid = psdata.getPid();
 		arrivalTime = psdata.getArrivalTime();
@@ -52,7 +50,7 @@ public class ProcessData {
 			executing = false;
 		}
 	}
-	public int getTime() {
+	public int getRemaining() {
 		return time;
 	}
 	public int getPriority() {
@@ -88,7 +86,7 @@ public class ProcessData {
 		}
 	}
 	private boolean isChangeable() {
-		if(quantum<=ProcessData.FINISHED) {
+		if(quantum <= FINISHED) {
 			changeable = true;
 		}else {
 			changeable = false;
