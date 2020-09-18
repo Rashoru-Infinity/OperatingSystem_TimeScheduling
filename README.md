@@ -4,7 +4,99 @@ This is a simulator for CPU time scheduling.
 # Demo
 The following is the execution example of the simulator.
 
-![demo](https://github.com/Rashoru-Infinity/OperatingSystem_TimeScheduling/blob/demo_images/messageImage_1598545670852.jpg)
+```
+OperatingSystem_TimeScheduling/src/bin$ java al19136.Main
+Input the number of processes.
+3
+Input a quantum.
+2
+Process0
+Input the arrival time of the process.
+0
+Input the deadline of the process.
+10
+Input priority of the process.
+1
+Input how long does the process take.
+4
+Process1
+Input the arrival time of the process.
+2
+Input the deadline of the process.
+6
+Input priority of the process.
+3
+Input how long does the process take.
+4
+Process2
+Input the arrival time of the process.
+4
+Input the deadline of the process.
+9
+Input priority of the process.
+5
+Input how long does the process take.
+2
+
+  FCFS       SPT        Deadline   Priority   RoundRobin
+0:Process0   Process0   Process0   Process0   Process0
+1:Process0   Process0   Process0   Process0   Process0
+2:Process0   Process0   Process1   Process0   Process1
+3:Process0   Process0   Process1   Process0   Process1
+4:Process1   Process2   Process1   Process2   Process0
+5:Process1   Process2   Process1   Process2   Process0
+6:Process1   Process1   Process2   Process1   Process2
+7:Process1   Process1   Process2   Process1   Process2
+8:Process2   Process1   Process0   Process1   Process1
+9:Process2   Process1   Process0   Process1   Process1
+10:DO_NOTHING   DO_NOTHING   DO_NOTHING   DO_NOTHING   DO_NOTHING
+
+FCFS:
+        Process0:
+                TurnAroundTime : 4
+        Process1:
+                TurnAroundTime : 6
+        Process2:
+                TurnAroundTime : 6
+        Average : 5.333333333333333
+
+SPT:
+        Process0:
+                TurnAroundTime : 4
+        Process1:
+                TurnAroundTime : 8
+        Process2:
+                TurnAroundTime : 2
+        Average : 4.666666666666667
+
+Deadline:
+        Process0:
+                TurnAroundTime : 10
+        Process1:
+                TurnAroundTime : 4
+        Process2:
+                TurnAroundTime : 4
+        Average : 6.0
+
+Priority:
+        Process0:
+                TurnAroundTime : 4
+        Process1:
+                TurnAroundTime : 8
+        Process2:
+                TurnAroundTime : 2
+        Average : 4.666666666666667
+
+RoundRobin:
+        Process0:
+                TurnAroundTime : 6
+        Process1:
+                TurnAroundTime : 8
+        Process2:
+                TurnAroundTime : 4
+        Average : 6.0
+
+```
 
 First, please input some informations follow the instructions.
 
@@ -13,16 +105,16 @@ After that, simulator simulates CPU time scheduling.
 Finally, this program displays the result on the console.
 
 # Process to execute
-$>git clone https://github.com/Rashoru-Infinity/OperatingSystem_TimeScheduling.git
+$ git clone https://github.com/Rashoru-Infinity/OperatingSystem_TimeScheduling.git
 
-$>cd OperatingSystem_TimeScheduling
+$ cd OperatingSystem_TimeScheduling
 
-$>sudo apt install ant
+$ sudo apt install ant
 
-$>cd src
+$ cd src
 
-$>ant
+$ ant
 
-$>cd bin
+$ cd bin
 
-$>java al19136.Main
+$ java al19136.Main
