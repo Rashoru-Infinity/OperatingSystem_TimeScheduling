@@ -14,8 +14,8 @@ class BestCase_Priority{
 			int remaining = rand.nextInt(10) + 1;
 			System.out.println(arrival);
 			System.out.println(deadline);
-			System.out.println(priority);
 			System.out.println(-remaining);
+			System.out.println(remaining);
 		}
 	}
 }
