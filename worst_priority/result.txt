@@ -1,0 +1,11 @@
+OperatingSystem_TimeScheduling/src/bin$ java al19136.Main < WorstCase_Priority.txt | grep -e "Average : " -e "FCFS:" -e "SPT:" -e "Deadline:" -e "Priority:" -e "RoundRobin:"
+FCFS:
+	Average : 9.763
+SPT:
+	Average : 8.8043
+Deadline:
+	Average : 10.3492
+Priority:
+	Average : 11.1563
+RoundRobin:
+	Average : 11.108

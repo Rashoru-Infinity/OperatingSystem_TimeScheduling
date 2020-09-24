@@ -1,0 +1,11 @@
+OperatingSystem_TimeScheduling/src/bin$ java al19136.Main < DefaultTestCase.txt | grep -e "Average : " -e "FCFS:" -e "SPT:" -e "Deadline:" -e "Priority:" -e "RoundRobin:"
+FCFS:
+	Average : 9.5923
+SPT:
+	Average : 8.7163
+Deadline:
+	Average : 10.2603
+Priority:
+	Average : 9.6089
+RoundRobin:
+	Average : 10.9107

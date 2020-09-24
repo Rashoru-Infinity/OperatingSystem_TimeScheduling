@@ -1,0 +1,11 @@
+OperatingSystem_TimeScheduling/src/bin$ java al19136.Main < LongRoundRobin.txt | grep -e "Average : " -e "FCFS:" -e "SPT:" -e "Deadline:" -e "Priority:" -e "RoundRobin:"
+FCFS:
+	Average : 9.9828
+SPT:
+	Average : 8.977
+Deadline:
+	Average : 10.5653
+Priority:
+	Average : 9.9629
+RoundRobin:
+	Average : 9.9828

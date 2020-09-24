@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class GenTestCase{
+class Default{
 	public static void main(String[] args) {
 		Random rand = new Random();
 		int process = 10000;
