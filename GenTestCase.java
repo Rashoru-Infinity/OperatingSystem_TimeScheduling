@@ -5,7 +5,7 @@ class GenTestCase{
 		Random rand = new Random();
 		int process = 10000;
 		System.out.println(process);
-		int quantum = rand.nextInt(10) + 1;
+		int quantum = 5;
 		System.out.println(quantum);
 		for(int n = 0;n < process;n++) {
 			int arrival = rand.nextInt(process * 10);
