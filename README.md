@@ -38,7 +38,7 @@
 
   ・タイムスライスは5に設定
 
-\~LongRoundRobin\~
+\~LongRoundRobin.txt\~
 
   ・LongRoundRobinクラスから生成
 
@@ -46,7 +46,7 @@
 
   ・タイムスライスを10に設定
 
-\~ShortRoundRobin\~
+\~ShortRoundRobin.txt\~
 
   ・ShortRoundRobinクラスから生成
 
