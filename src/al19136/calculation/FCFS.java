@@ -1,7 +1,5 @@
 package al19136.calculation;
 
-import al19136.process.Process;
-
 public class FCFS extends Process {
 	@Override
 	public void calc() {

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 import al19136.calculation.*;
+import al19136.calculation.Process;
 import al19136.process.*;
-import al19136.process.Process;
 
 public class Main {
 	private static ArrayList<ProcessData> psList = new ArrayList<>();

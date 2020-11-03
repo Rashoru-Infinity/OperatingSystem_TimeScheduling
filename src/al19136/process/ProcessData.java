@@ -1,6 +1,6 @@
 package al19136.process;
 
-public class ProcessData implements SpecialNumbers {
+public class ProcessData implements ProcessStatus {
 	private int time;
 	private int priority;
 	private int pid;

@@ -2,8 +2,7 @@ package al19136.calculation;
 
 import java.util.Collections;
 
-import al19136.process.Process;
-import al19136.process.TimeComparator;
+import al19136.calculation.comparator.TimeComparator;
 
 public class SPT extends Process {
 	@Override

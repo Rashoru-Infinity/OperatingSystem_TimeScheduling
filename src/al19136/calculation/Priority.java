@@ -3,8 +3,7 @@ package al19136.calculation;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import al19136.process.PriorityComparator;
-import al19136.process.Process;
+import al19136.calculation.comparator.PriorityComparator;
 import al19136.process.ProcessData;
 
 public class Priority extends Process {

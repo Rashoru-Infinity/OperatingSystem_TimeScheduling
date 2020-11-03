@@ -1,6 +1,5 @@
 package al19136.calculation;
 
-import al19136.process.Process;
 import al19136.process.ProcessData;
 
 public class RoundRobin extends Process {

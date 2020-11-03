@@ -2,8 +2,7 @@ package al19136.calculation;
 
 import java.util.Collections;
 
-import al19136.process.DeadlineComparator;
-import al19136.process.Process;
+import al19136.calculation.comparator.DeadlineComparator;
 
 public class Deadline extends Process {
 	@Override

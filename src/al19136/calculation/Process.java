@@ -1,9 +1,13 @@
-package al19136.process;
+package al19136.calculation;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public abstract class Process implements SpecialNumbers {
+import al19136.calculation.comparator.ArrivalTimeComparator;
+import al19136.process.ProcessData;
+import al19136.process.ProcessStatus;
+
+public abstract class Process implements ProcessStatus {
 	protected ArrayList<ProcessData> psList = new ArrayList<>();
 	protected ArrayList<ProcessData> readyList = new ArrayList<>();
 	public ArrayList<ProcessData> timeTable = new ArrayList<>();
