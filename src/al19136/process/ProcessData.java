@@ -85,7 +85,7 @@ public class ProcessData implements ProcessStatus {
 			stop();
 		}
 	}
-	private boolean isChangeable() {
+	public boolean isChangeable() {
 		if(quantum <= FINISHED) {
 			changeable = true;
 		}else {

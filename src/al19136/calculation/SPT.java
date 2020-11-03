@@ -5,23 +5,26 @@ import java.util.Collections;
 import al19136.calculation.comparator.TimeComparator;
 
 public class SPT extends Process {
+	public SPT(int processors) {
+		super(processors);
+	}
+
 	@Override
 	public void calc() {
 		sortArrival();
-		for(int i=0;psList.size()>0||readyList.size()>0;i++) {
+		for(int i = 0;psList.size() > 0 || readyList.size() > 0;i++) {
 			addReadyList(i);
-			if(readyList.size()>0) {
-				if(!readyList.get(0).isExecuting()) {
-					sortReadyList();
+			for (int j = 0;j < readyList.size();j++) {
+				if (!readyList.get(j).isExecuting()) {
+					readyList.get(j).setQuantum(readyList.get(j).getRemaining());
 				}
-				execute(readyList.get(0).getRemaining());
-			}else {
-				execute(DO_NOTHING);
 			}
+			sortRemaining();
+			execute();
 		}
 	}
 	
-	private void sortReadyList() {
+	private void sortRemaining() {
 		Collections.sort(readyList,new TimeComparator());
 	}
 }
