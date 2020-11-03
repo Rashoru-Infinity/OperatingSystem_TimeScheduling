@@ -6,6 +6,8 @@ The following is the execution example of the simulator.
 
 ```
 OperatingSystem_TimeScheduling/src/bin$ java al19136.Main
+Input the number of processors.
+2
 Input the number of processes.
 3
 Input a quantum.
@@ -38,63 +40,91 @@ Input priority of the process.
 Input how long does the process take.
 2
 
-  FCFS       SPT        Deadline   Priority   RoundRobin
-0:Process0   Process0   Process0   Process0   Process0
-1:Process0   Process0   Process0   Process0   Process0
-2:Process0   Process0   Process1   Process0   Process1
-3:Process0   Process0   Process1   Process0   Process1
-4:Process1   Process2   Process1   Process2   Process0
-5:Process1   Process2   Process1   Process2   Process0
-6:Process1   Process1   Process2   Process1   Process2
-7:Process1   Process1   Process2   Process1   Process2
-8:Process2   Process1   Process0   Process1   Process1
-9:Process2   Process1   Process0   Process1   Process1
-10:DO_NOTHING   DO_NOTHING   DO_NOTHING   DO_NOTHING   DO_NOTHING
+FCFS :
+        Processor0      Processor1
+0:      Process0        DO_NOTHING
+1:      Process0        DO_NOTHING
+2:      Process0        Process1
+3:      Process0        Process1
+4:      Process1        Process2
+5:      Process1        Process2
+SPT :
+        Processor0      Processor1
+0:      Process0        DO_NOTHING
+1:      Process0        DO_NOTHING
+2:      Process0        Process1
+3:      Process0        Process1
+4:      Process1        Process2
+5:      Process1        Process2
+Deadline :
+        Processor0      Processor1
+0:      Process0        DO_NOTHING
+1:      Process0        DO_NOTHING
+2:      Process1        Process0
+3:      Process1        Process0
+4:      Process1        Process2
+5:      Process1        Process2
+Priority :
+        Processor0      Processor1
+0:      Process0        DO_NOTHING
+1:      Process0        DO_NOTHING
+2:      Process1        Process0
+3:      Process1        Process0
+4:      Process2        Process1
+5:      Process2        Process1
+RoundRobin :
+        Processor0      Processor1
+0:      Process0        DO_NOTHING
+1:      Process0        DO_NOTHING
+2:      Process0        Process1
+3:      Process0        Process1
+4:      Process1        Process2
+5:      Process1        Process2
 
 FCFS:
         Process0:
-                TurnAroundTime : 4
+                TurnAroundTime : 4.0
         Process1:
-                TurnAroundTime : 6
+                TurnAroundTime : 4.0
         Process2:
-                TurnAroundTime : 6
-        Average : 5.333333333333333
+                TurnAroundTime : 2.0
+        Average : 3.3333333333333335
 
 SPT:
         Process0:
-                TurnAroundTime : 4
+                TurnAroundTime : 4.0
         Process1:
-                TurnAroundTime : 8
+                TurnAroundTime : 4.0
         Process2:
-                TurnAroundTime : 2
-        Average : 4.666666666666667
+                TurnAroundTime : 2.0
+        Average : 3.3333333333333335
 
 Deadline:
         Process0:
-                TurnAroundTime : 10
+                TurnAroundTime : 4.0
         Process1:
-                TurnAroundTime : 4
+                TurnAroundTime : 4.0
         Process2:
-                TurnAroundTime : 4
-        Average : 6.0
+                TurnAroundTime : 2.0
+        Average : 3.3333333333333335
 
 Priority:
         Process0:
-                TurnAroundTime : 4
+                TurnAroundTime : 4.0
         Process1:
-                TurnAroundTime : 8
+                TurnAroundTime : 4.0
         Process2:
-                TurnAroundTime : 2
-        Average : 4.666666666666667
+                TurnAroundTime : 2.0
+        Average : 3.3333333333333335
 
 RoundRobin:
         Process0:
-                TurnAroundTime : 6
+                TurnAroundTime : 4.0
         Process1:
-                TurnAroundTime : 8
+                TurnAroundTime : 4.0
         Process2:
-                TurnAroundTime : 4
-        Average : 6.0
+                TurnAroundTime : 2.0
+        Average : 3.3333333333333335
 
 ```
 
