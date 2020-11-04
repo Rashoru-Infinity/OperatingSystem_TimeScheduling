@@ -17,8 +17,8 @@ public class Priority extends Process {
 		for(int i = 0;psList.size() > 0 || readyList.size() > 0;i++) {
 			addReadyList(i);
 			for (int j = 0;j < readyList.size();j++) {
-				if (readyList.get(j).isExecuting()) {
-					readyList.get(i).setQuantum(readyList.get(i).getRemaining());
+				if (!readyList.get(j).isExecuting()) {
+					readyList.get(j).setQuantum(readyList.get(j).getRemaining());
 				}
 			}
 			sortPriority(readyList);

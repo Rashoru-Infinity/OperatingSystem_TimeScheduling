@@ -45,11 +45,6 @@ public class ProcessData implements ProcessStatus {
 		changeable = false;
 		setQuantum(quantum);
 	}
-	private void stop() {
-		if(changeable) {
-			executing = false;
-		}
-	}
 	public int getRemaining() {
 		return time;
 	}
@@ -66,7 +61,7 @@ public class ProcessData implements ProcessStatus {
 		return deadline;
 	}
 	public boolean isArrived(int time) {
-		if(arrivalTime<=time) {
+		if(arrivalTime <= time) {
 			return true;
 		}else {
 			return false;
@@ -81,16 +76,16 @@ public class ProcessData implements ProcessStatus {
 		}
 		time--;
 		this.quantum--;
-		if(isChangeable()) {
-			stop();
-		}
-	}
-	public boolean isChangeable() {
-		if(quantum <= FINISHED) {
+		if (this.quantum <= FINISHED || time <= FINISHED) {
 			changeable = true;
 		}else {
 			changeable = false;
 		}
+		if(isChangeable()) {
+			executing = false;
+		}
+	}
+	public boolean isChangeable() {
 		return changeable;
 	}
 	public void setQuantum(int quantum) {
