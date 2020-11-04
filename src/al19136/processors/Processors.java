@@ -13,11 +13,12 @@ public class Processors implements ProcessStatus {
 				this.processors[i] = new ProcessData();
 				this.processors[i].setPid(DO_NOTHING);
 			}else {
-				if (!prevContexts.getContext(i).isChangeable())
+				if (!prevContexts.getContext(i).isChangeable()) {
 					this.processors[i] = new ProcessData(prevContexts.getContext(i));
-				else
+				}else {
 					this.processors[i] = new ProcessData();
 					this.processors[i].setPid(DO_NOTHING);
+				}
 			}
 		}
 	}
@@ -26,22 +27,17 @@ public class Processors implements ProcessStatus {
 		int emptyIndex = NOT_FOUND;
 		for (int i = 0;i < processors.length;i++) {
 			if (processors[i].getPid() == waitingProcess.getPid()) {
-				foundEmpty = true;
-				emptyIndex = NOT_FOUND;
 				processors[i].execute(processors[i].getQuantum());
+				return true;
 			}
-			if (processors[i].getPid() == DO_NOTHING) {
-				if (!foundEmpty) {
-					emptyIndex = i;
-					foundEmpty = true;
-				}else {
-					processors[i] = new ProcessData();
-					processors[i].setPid(DO_NOTHING);
-				}
+			if (processors[i].getPid() == DO_NOTHING && !foundEmpty) {
+				foundEmpty = true;
+				emptyIndex = i;
 			}
 		}
-		if (emptyIndex != NOT_FOUND) {
+		if (foundEmpty) {
 			processors[emptyIndex] = new ProcessData(waitingProcess);
+			processors[emptyIndex].execute(processors[emptyIndex].getQuantum());
 		}
 		return foundEmpty;
 	}
@@ -53,8 +49,5 @@ public class Processors implements ProcessStatus {
 			processors[i] = new ProcessData();
 			processors[i].setPid(DO_NOTHING);
 		}
-	}
-	public int getProcessorsNum() {
-		return processors.length;
 	}
 }

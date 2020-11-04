@@ -51,11 +51,6 @@ public abstract class Process implements ProcessStatus {
 					readyList.remove(i--);
 				}
 			}
-			for (int i = 0;i < currentStatus.getProcessorsNum();i++) {
-				if (currentStatus.getContext(i) != null && currentStatus.getContext(i).getPid() != DO_NOTHING) {
-					currentStatus.getContext(i).execute(currentStatus.getContext(i).getQuantum());
-				}
-			}
 		}
 		processorsStatus.add(currentStatus);
 	}
