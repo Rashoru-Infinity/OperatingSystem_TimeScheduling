@@ -43,17 +43,4 @@ public class RoundRobin extends Process {
 			}
 		}
 	}
-	/*
-	@Override
-	protected void execute() {
-		for (int i = 0;i < readyList.size();i++) {
-			if (readyList.get(i).getQuantum() == FINISHED) {
-				readyList.add(new ProcessData(readyList.get(i)));
-				readyList.get(readyList.size() - 1).setQuantum(quantum);
-				readyList.remove(i--);
-			}
-		}
-		super.execute();
-	}
-	*/
 }
